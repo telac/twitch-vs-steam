@@ -1,7 +1,7 @@
-from dbconnector import DatabaseConnector
-from plotly.offline import plot
 import plotly.graph_objs as go
 import queries
+from dbconnector import DatabaseConnector
+from plotly.offline import plot
 
 
 class DataAnalyzer():
@@ -50,6 +50,42 @@ class DataAnalyzer():
             traces.append(self.construct_trace(unique + ' ratio [steam/twitch]', x, y))
 
         plot(traces, filename='ratios.html')
+
+
+    def plot_order(self):
+        # this has to be fixed sometime. for now it works, but is ugly.
+        traces = []
+        twitch_dict = {}
+        steam_dict = {}
+        for unique in self.unique:
+            unique = unique[0]
+            x = []
+            y = []
+            x_s = []
+            y_s = []
+            for row in self.dataset:
+                if unique == row[2]:
+                    batch_id = row[0]
+                    for row in self.dataset:
+                        if row[0] == batch_id:
+                            twitch_dict[row[2]] = [row[1], row[3]]
+                            steam_dict[row[2]] = [row[1], row[4]]
+                    sorted_y = sorted(twitch_dict.items(), key=lambda kv: kv[1][1])
+                    sorted_y_steam = sorted(steam_dict.items(), key=lambda kv: kv[1][1])
+                    for index, value in enumerate(sorted_y):
+                        if value[0] == unique:
+                            x.append(value[1][0])
+                            y.append(index + 1)
+
+                    for index, value in enumerate(sorted_y_steam):
+                        if value[0] == unique:
+                            x_s.append(value[1][0])
+                            y_s.append(index + 1)
+
+            traces.append(self.construct_trace(unique + ' order [twitch]', x, y))
+            traces.append(self.construct_trace(unique + ' order [steam]', x_s, y_s))
+
+        plot(traces, filename='order.html')
 
 
     def construct_trace(self, name0, x0, y0):
