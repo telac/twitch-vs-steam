@@ -82,8 +82,8 @@ class DataAnalyzer():
                             x_s.append(value[1][0])
                             y_s.append(index + 1)
 
-            traces.append(self.construct_trace(unique + ' order [twitch]', x, y))
-            traces.append(self.construct_trace(unique + ' order [steam]', x_s, y_s))
+            traces.append(self.construct_trace('[twitch]' + unique + '  order', x, y))
+            traces.append(self.construct_trace('[steam]' + unique + '  order', x_s, y_s))
 
         plot(traces, filename='order.html')
 
@@ -93,6 +93,8 @@ class DataAnalyzer():
             x = x0,
             y = y0,
             name=name0,
-            mode='lines'
+            mode='lines',
+            text= [str(name0 + ' : ' + str(y_)) for y_ in y0],
+            hoverinfo='text'
         )
         return trace

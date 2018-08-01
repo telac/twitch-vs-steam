@@ -2,8 +2,22 @@ Fetches data from twitch viewers and from steam to compare twitch viewership vs 
 
 Dependencies
 
-`plotly` and `BeautifulSoup`
+`plotly`, `requests` and `BeautifulSoup`
+
+How to install dependencies:
+
+```
+pip install beautifulsoup4
+pip install requests
+pip install plotly
+```
 
 How to use:
 
 Run `get_data`. Running `get_data` again incrementally adds data with timestamps to a `sqilite3` database, where the data is then plotted from.
+
+You will also need to create a `conf.ini` file that contains at least the following:
+```
+[twitch]
+client_id=<your twitch API-key>
+```

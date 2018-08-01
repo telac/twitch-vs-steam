@@ -125,7 +125,7 @@ if __name__ == "__main__":
     dbconnector.create_schema()
     dbconnector.insert_data()
     da = DataAnalyzer()
-    # da.show()
+    da.show()
     da.plot_data()
     da.plot_ratio()
     da.plot_order()
