@@ -31,8 +31,8 @@ class DataAnalyzer():
                     twitch_x.append(row[1])
                     twitch_y.append(row[3])
 
-            traces.append(self.construct_trace(unique + ' steam ', steam_x, steam_y))
-            traces.append(self.construct_trace(unique + ' twitch ', twitch_x, twitch_y))
+            traces.append(self.construct_trace('[steam] ' + unique, steam_x, steam_y))
+            traces.append(self.construct_trace('[twitch] ' + unique, twitch_x, twitch_y))
 
         plot(traces, filename='plots/raw_data.html')
 

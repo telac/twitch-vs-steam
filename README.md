@@ -21,11 +21,11 @@ You can also provide arguments:
 `get_data.py [FETCH] [PLOT] [TIMER]`
 
 ##### parameters
-* `[FETCH] = 1` fetches data, other values ignore the fetching portion
-* `[PLOT] = 1` plots data and, other values ignore the fetching portion
+* `[FETCH] = 1` fetches data, other values ignore the fetching portion.
+* `[PLOT] = 1` plots data and, other values ignore the plotting portion.
 * `[TIMER]` sets a which runs the program every `n` seconds. `0` only runs the program once.
 
-Example:
+##### examples:
 
 * `get_data.py 1 0 900` fetches data every 15 minutes, but does not plot the data on each iteration.
 * `get_data.py 0 1 0` does *not* fetch data, plots data but only once.
