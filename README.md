@@ -22,13 +22,14 @@ You can also provide arguments:
 
 ##### parameters
 * `[FETCH] = 1` fetches data, other values ignore the fetching portion
-* `[PLOT]=1` plots data and, other values ignore the fetching portion
+* `[PLOT] = 1` plots data and, other values ignore the fetching portion
 * `[TIMER]` sets a which runs the program every `n` seconds. `0` only runs the program once.
 
 Example:
 
 * `get_data.py 1 0 900` fetches data every 15 minutes, but does not plot the data on each iteration.
 * `get_data.py 0 1 0` does *not* fetch data, plots data but only once.
+* `get_data.py` with no parameters fetches latest data, plots all three plots and then exits.
 
 
 You will also need to create a `conf.ini` file that contains at least the following:
