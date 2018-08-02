@@ -4,7 +4,7 @@ Dependencies
 
 `plotly`, `requests` and `BeautifulSoup`
 
-How to install dependencies:
+# How to install dependencies:
 
 ```
 pip install beautifulsoup4
@@ -12,7 +12,7 @@ pip install requests
 pip install plotly
 ```
 
-How to use:
+# How to use:
 
 Run `get_data`. Running `get_data` again incrementally adds data with timestamps to a `sqilite3` database, where the data is then plotted from.
 

@@ -37,18 +37,14 @@ class APIconnector():
                batch.write("1\n")
                return last_batch
 
+
     def current_time(self):
         timestamp = time.time()
         current_time = datetime.fromtimestamp(timestamp).strftime('%Y-%m-%d %H:%M:%S')
         return current_time
 
+
     def config(self, section, filename='conf.ini'):
-        """
-        parses the login information and server connection information
-        :param filename: path to the config file
-        :param section: which portion of the config will be parsed
-        :return: returns config information, including server, database, user and password that is used to access the database.
-        """
         parser = ConfigParser()
         parser.read(filename)
         conf = {}
@@ -88,9 +84,8 @@ class APIconnector():
         return current_players
 
     def get_twitch_data(self, fetch=True):
-        top_url = 'https://api.twitch.tv/helix/games/top'
+        request_url = 'https://api.twitch.tv/helix/games/top'
         conf = self.config(section='twitch')
-        request_url = top_url
         headers = {'Accept': 'application/vnd.twitchtv.v5+json',
                    'Client-ID': conf['client_id']}
         game_url = 'https://api.twitch.tv/helix/streams?game_id='
@@ -120,6 +115,7 @@ class APIconnector():
         return viewers_by_game
 
 if __name__ == "__main__":
+
     ac = APIconnector(True)
     dbconnector = DatabaseConnector(steam=ac.steam, twitch=ac.twitch, current_time=ac.current_time, batchID=ac.batchID)
     dbconnector.create_schema()
