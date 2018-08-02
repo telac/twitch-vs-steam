@@ -21,3 +21,11 @@ You will also need to create a `conf.ini` file that contains at least the follow
 [twitch]
 client_id=<your twitch API-key>
 ```
+
+# Current Plots
+
+[raw data](plots/raw_data.html)
+
+[ratios](plots/order.html)
+
+[order](plots/order.html)

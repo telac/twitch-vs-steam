@@ -115,14 +115,14 @@ class APIconnector():
         return viewers_by_game
 
 if __name__ == "__main__":
-    while True:
-        ac = APIconnector(True)
-        dbconnector = DatabaseConnector(steam=ac.steam, twitch=ac.twitch, current_time=ac.current_time, batchID=ac.batchID)
-        dbconnector.create_schema()
-        dbconnector.insert_data()
-        sleep(900)
-        # da = DataAnalyzer()
-        # da.show()
-        # da.plot_data()
-        # da.plot_ratio()
-        # da.plot_order()
+    #while True:
+    #ac = APIconnector(True)
+    #dbconnector = DatabaseConnector(steam=ac.steam, twitch=ac.twitch, current_time=ac.current_time, batchID=ac.batchID)
+    #dbconnector.create_schema()
+    #dbconnector.insert_data()
+    #sleep(900)
+    da = DataAnalyzer()
+    da.show()
+    da.plot_data()
+    da.plot_ratio()
+    da.plot_order()

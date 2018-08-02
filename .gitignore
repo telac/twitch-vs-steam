@@ -1,5 +1,4 @@
 __pycache__/
-plots/.*html
 *.csv
 *.db
 *.exe
