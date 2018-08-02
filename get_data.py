@@ -133,12 +133,18 @@ if __name__ == "__main__":
         fetch = sys.argv[1]
         plot = sys.argv[2]
         fetch_timer = int(sys.argv[3])
-        while True:
+        if fetch_timer != 0:
+            while True:
+                if fetch == '1':
+                    fetch_data()
+                if plot == '1':
+                    plot_data()
+                sleep(fetch_timer)
+        else:
             if fetch == '1':
                 fetch_data()
             if plot == '1':
                 plot_data()
-            sleep(fetch_timer)
 
     else:
         print("no arguments given, fetching and plotting")
