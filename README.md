@@ -26,6 +26,6 @@ client_id=<your twitch API-key>
 
 [raw data](plots/raw_data.html)
 
-[ratios](plots/order.html)
+[ratios](plots/ratios.html)
 
 [order](plots/order.html)
