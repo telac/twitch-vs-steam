@@ -2,8 +2,3 @@
 ---
 
 @import "jekyll-theme-slate";
-
-div.plots {
-  width:40vw;
-  height:30vw;
-}
