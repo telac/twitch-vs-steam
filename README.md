@@ -45,3 +45,7 @@ client_id=<your twitch API-key>
 [ratios](plots/ratios.html)
 
 [order](plots/order.html)
+
+## github.io page
+
+[https://telac.github.io/twitch_vs_steam/](https://telac.github.io/twitch_vs_steam/)
