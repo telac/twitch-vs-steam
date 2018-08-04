@@ -49,5 +49,7 @@ class DatabaseConnector():
 
         self.connection.commit()
 
+        print("inserted batch " + self.batchID.strip("\n") + " at " + self.current_time)
+
     def fetch_data(self, query):
         return self.cursor.execute(query).fetchall()
