@@ -75,7 +75,6 @@ class DataAnalyzer():
                     for index, value in enumerate(sorted_y):
                         if value[0] == unique:
                             x.append(value[1][0])
-                            print(index)
                             y.append(index + 1)
 
                     for index, value in enumerate(sorted_y_steam):
