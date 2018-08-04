@@ -55,8 +55,6 @@ class DataAnalyzer():
     def plot_order(self):
         # this has to be fixed sometime. for now it works, but is ugly.
         traces = []
-        twitch_dict = {}
-        steam_dict = {}
         for unique in self.unique:
             unique = unique[0]
             x = []
@@ -64,6 +62,8 @@ class DataAnalyzer():
             x_s = []
             y_s = []
             for row in self.dataset:
+                twitch_dict = {}
+                steam_dict = {}
                 if unique == row[2]:
                     batch_id = row[0]
                     for row in self.dataset:
@@ -75,6 +75,7 @@ class DataAnalyzer():
                     for index, value in enumerate(sorted_y):
                         if value[0] == unique:
                             x.append(value[1][0])
+                            print(index)
                             y.append(index + 1)
 
                     for index, value in enumerate(sorted_y_steam):
