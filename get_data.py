@@ -11,12 +11,14 @@ def fetch_data():
         dbconnector.create_schema()
         dbconnector.insert_data()
 
+
 def plot_data():
         da = DataAnalyzer()
         # da.show()
         da.plot_data()
         da.plot_ratio()
         da.plot_order()
+
 
 def init_fetching():
     if len(sys.argv) > 3:
@@ -37,7 +39,8 @@ def init_fetching():
                 plot_data()
 
     else:
-        print("no arguments given, fetching and plotting")
+        print("no arguments given (at least 3 required), fetching and plotting")
+        print("arg usage: get_data.py [FETCH] [PLOT] [TIMER]")
         print("example arg: get_data.py 1 1 900 (fetches and plots data, fetches new data every 15 minutes)")
         print("example arg: get_data.py 1 0 900 (fetches, fetches new data every 15 minutes)")
         fetch_data()
