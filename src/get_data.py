@@ -1,7 +1,7 @@
 import sys
 from APIconnector import APIconnector
 from data_analyzer import DataAnalyzer
-from dbconnector import DatabaseConnector
+from db_connector import DatabaseConnector
 from time import sleep
 
 

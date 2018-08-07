@@ -1,6 +1,6 @@
 import plotly.graph_objs as go
 import queries
-from dbconnector import DatabaseConnector
+from db_connector import DatabaseConnector
 from plotly.offline import plot
 
 
@@ -34,7 +34,7 @@ class DataAnalyzer():
             traces.append(self.construct_trace('[steam] ' + unique, steam_x, steam_y))
             traces.append(self.construct_trace('[twitch] ' + unique, twitch_x, twitch_y))
 
-        plot(traces, filename='plots/raw_data.html')
+        plot(traces, filename='../plots/raw_data.html')
 
     def plot_ratio(self):
         traces = []
@@ -49,7 +49,7 @@ class DataAnalyzer():
 
             traces.append(self.construct_trace(unique + ' ratio [steam/twitch]', x, y))
 
-        plot(traces, filename='plots/ratios.html')
+        plot(traces, filename='../plots/ratios.html')
 
 
     def plot_order(self):
@@ -85,7 +85,7 @@ class DataAnalyzer():
             traces.append(self.construct_trace('[twitch]' + unique + '  order', x, y))
             traces.append(self.construct_trace('[steam]' + unique + '  order', x_s, y_s))
 
-        plot(traces, filename='plots/order.html')
+        plot(traces, filename='../plots/order.html')
 
 
     def construct_trace(self, name0, x0, y0):
